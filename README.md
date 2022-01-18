@@ -12,6 +12,7 @@ The test script follows this process:
   3) next, the script sets the default port value = 8088
   4) then the script starts the application, waits 10 seconds and then sends a request to stats.  If no response, we assume the app cannot start and we bail.  If response, then we execute tests.
   5) script progress is output to a log in the same directory as the script, executed test results are output to .csv in same directory.
+  6) the script shuts down the application after all tests are executed.
 
 
 Some warts: 
