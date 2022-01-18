@@ -3,7 +3,7 @@
 - The test script was written using Python version 3.10
 - Script was written / tested using a Mac. There are likely code changes that will need to be made in order to run on alternate operating systems 
 - Script should be executed with this command: sudo python3 test_it.py
-- 'sudo' is included because a .csv file is created in the same directory as the test script.  The .csv file contains test results
+- 'sudo' is included because a .csv file is created in the same directory as the test script.  The .csv file contains test results.  I'm sure there's a way to get around using sudo, but I didnt have time to look into it.  
 
 The test script follows this process:
 
@@ -16,8 +16,9 @@ The test script follows this process:
 
 Some warts: 
 
-  1) test 1 should be multi-threading 100 requests to the application, so I expect execution to be fast, but it isnt.  Not sure if the application is throttled somehow or if I messed up my multi-treading code. 
+  1) test 1 should be multi-threading 100 requests to the application, so I expect execution to be fast, but it isnt.  Not sure if the application is throttled somehow or if I messed up my multi-treading code. At any rate, you may want to go get a coffee while test 1 executes.  
   2) test 9 kept barfing and killing the script, so I commented it out.
   3) a couple of tests output curl command responses to the terminal during execution, which is confusing and annoying altho it doesnt mess up test execution.  I tried to pass a -s in the curl commands to silence, but that didnt do the trick.  
   4) one test that i didnt get around to writing was sending a shutdown command while many hash requests were executing to test that the app stops accepting requests.  I'm just too tired at this point.  :-). 
   5) I know that I should have created a test class so that I could just create new test class objects rather than defining the same variables each time I defined a new test.  
+  6) I am reasonably sure that the test results that are output are accurate in terms of pass versus fail.  I got some contradictory results when executing manually, so I tried to account for those while still generating accurate results. 
