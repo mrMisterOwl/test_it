@@ -20,3 +20,4 @@ Some warts:
   2) test 9 kept barfing and killing the script, so I commented it out.
   3) a couple of tests output curl command responses to the terminal during execution, which is confusing and annoying altho it doesnt mess up test execution.  I tried to pass a -s in the curl commands to silence, but that didnt do the trick.  
   4) one test that i didnt get around to writing was sending a shutdown command while many hash requests were executing to test that the app stops accepting requests.  I'm just too tired at this point.  :-). 
+  5) I know that I should have created a test class so that I could just create new test class objects rather than defining the same variables each time I defined a new test.  
